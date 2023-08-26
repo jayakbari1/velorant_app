@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:velorant/utils/app_colors.dart';
+import 'package:velorant/utils/extension/media_query_extension.dart';
 import 'package:velorant/widgets/agents/show_ability.dart';
 
 class AgentInfo extends StatelessWidget {
@@ -7,9 +8,9 @@ class AgentInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.maybeOf(context)!.size;
-    final height = size.height;
-    final width = size.width;
+    final size = GetMediaQuery(context).mediaQuery;
+    final height = GetMediaQuery(context).height;
+    final width = GetMediaQuery(context).width;
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
