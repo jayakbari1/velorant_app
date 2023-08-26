@@ -1,6 +1,8 @@
 // ignore_for_file: cast_nullable_to_non_nullable
 
 import 'package:flutter/material.dart';
+import 'package:velorant/routes/app_routes.dart';
+import 'package:velorant/views/agents/agent_info.dart';
 import 'package:velorant/views/home_page.dart';
 
 
@@ -13,6 +15,11 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const HomePage(),
         );
+
+      case AppRoutes.agentInfo:
+        return MaterialPageRoute(
+          builder: (_) => const AgentInfo(),
+        );  
 
       default:
         return errorRoute();

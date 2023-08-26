@@ -2,6 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:velorant/home_page_data_provider/home_page_data_provider.dart';
+
+import 'package:velorant/routes/app_routes.dart';
+import 'package:velorant/routes/route_navigation.dart';
+
 import 'package:velorant/utils/app_colors.dart';
 import 'package:velorant/utils/app_string.dart';
 
@@ -19,6 +23,8 @@ class HomePage extends StatelessWidget {
       body: GestureDetector(
         onTap: () {
           // redirect to each screen
+
+          RouteNavigation.instance.navigateToScreen(AppRoutes.agentInfo);
         },
         child: ListView.builder(
           itemCount: 3,
