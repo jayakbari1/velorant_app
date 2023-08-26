@@ -8,7 +8,6 @@ class AgentInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = GetMediaQuery(context).mediaQuery;
     final height = GetMediaQuery(context).height;
     final width = GetMediaQuery(context).width;
     return Scaffold(
