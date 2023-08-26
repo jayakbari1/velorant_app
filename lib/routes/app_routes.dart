@@ -6,3 +6,4 @@ class AppRoutes {
   // Agent Related Routes
   static const agentInfo = '/agentInfo';
 }
+
