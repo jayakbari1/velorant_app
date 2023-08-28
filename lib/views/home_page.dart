@@ -1,6 +1,7 @@
 // VALORANT GUIDE
 
 import 'package:flutter/material.dart';
+import 'package:velorant/api_service/api_repository.dart';
 import 'package:velorant/home_page_data_provider/home_page_data_provider.dart';
 
 import 'package:velorant/routes/app_routes.dart';
@@ -36,6 +37,7 @@ class HomePage extends StatelessWidget {
                 // Redirect to weapons grid list
               } else {
                 // Redirect to maps grid list
+                ApiRepository.instance.getAgentsInfo();
               }
 
               // RouteNavigation.instance.navigateToScreen(AppRoutes.agentInfo);
