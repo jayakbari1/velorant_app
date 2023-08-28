@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:velorant/routes/app_routes.dart';
 import 'package:velorant/views/agents/agent_info.dart';
+import 'package:velorant/views/agents/agents_grid_list.dart';
 import 'package:velorant/views/home_page.dart';
-
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -16,10 +16,15 @@ class RouteGenerator {
           builder: (_) => const HomePage(),
         );
 
+      case '/agentsGridList':
+        return MaterialPageRoute(
+          builder: (_) => const AgentsGridList(),
+        );
+
       case AppRoutes.agentInfo:
         return MaterialPageRoute(
           builder: (_) => const AgentInfo(),
-        );  
+        );
 
       default:
         return errorRoute();
