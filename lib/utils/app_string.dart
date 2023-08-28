@@ -1,5 +1,7 @@
 class AppStrings {
   // All the common strings will be here
 
-  static const String homePageTitle = 'VALORANT GUIDE';
+  static const homePageTitle = 'VALORANT GUIDE';
+
+  static const agents = 'AGENTS';
 }

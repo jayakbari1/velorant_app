@@ -17,19 +17,30 @@ class HomePage extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         centerTitle: true,
         title: const Text(AppStrings.homePageTitle),
       ),
-      body: GestureDetector(
-        onTap: () {
-          // redirect to each screen
+      body: ListView.builder(
+        itemCount: 3,
+        itemBuilder: (_, index) {
+          return GestureDetector(
+            onTap: () {
+              // redirect to each screen
 
-          RouteNavigation.instance.navigateToScreen(AppRoutes.agentInfo);
-        },
-        child: ListView.builder(
-          itemCount: 3,
-          itemBuilder: (_, index) {
-            return Container(
+              if (index == 0) {
+                RouteNavigation.instance.navigateToScreen(
+                  AppRoutes.agentsGridList,
+                );
+              } else if (index == 1) {
+                // Redirect to weapons grid list
+              } else {
+                // Redirect to maps grid list
+              }
+
+              // RouteNavigation.instance.navigateToScreen(AppRoutes.agentInfo);
+            },
+            child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
               child: Card(
                 color: AppColors.backgroundColor,
@@ -63,9 +74,9 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }
