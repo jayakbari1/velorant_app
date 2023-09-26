@@ -5,6 +5,7 @@ import 'package:velorant/home_page_data_provider/home_page_data_provider.dart';
 
 import 'package:velorant/routes/app_routes.dart';
 import 'package:velorant/routes/route_navigation.dart';
+import 'package:velorant/store/weapons/weapon_store.dart';
 
 import 'package:velorant/utils/app_colors.dart';
 import 'package:velorant/utils/app_string.dart';
@@ -34,6 +35,9 @@ class HomePage extends StatelessWidget {
                 );
               } else if (index == 1) {
                 // Redirect to weapons grid list
+                RouteNavigation.instance.navigateToScreen(
+                  AppRoutes.weaponGridList,
+                );
               } else {
                 // Redirect to maps grid list
               }

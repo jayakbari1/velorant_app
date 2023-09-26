@@ -2,12 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:velorant/model/agents/agents_model.dart';
+import 'package:velorant/model/weapos/weapon_model.dart';
 import 'package:velorant/routes/app_routes.dart';
 import 'package:velorant/store/agent/get_agent_data.dart';
+import 'package:velorant/store/weapons/weapon_store.dart';
 import 'package:velorant/utils/extension/provider_extension.dart';
 import 'package:velorant/views/agents/agent_info.dart';
 import 'package:velorant/views/agents/agents_grid_list.dart';
 import 'package:velorant/views/home_page.dart';
+import 'package:velorant/views/weapons/weapon_grid_list.dart';
+import 'package:velorant/views/weapons/weapon_info.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -29,6 +33,18 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => AgentInfo(
             agentModel: args as AgentModel,
+          ),
+        );
+
+      case AppRoutes.weaponGridList:
+        return MaterialPageRoute(
+          builder: (_) => const WeaponGridList().withProvider(WeaponStore()),
+        );
+
+      case AppRoutes.weaponInfo:
+        return MaterialPageRoute(
+          builder: (_) => WeaponInfo(
+            weaponModel: args as WeaponModel,
           ),
         );
 

@@ -8,4 +8,8 @@ class AppRoutes {
 
   // Agent Related Routes
   static const agentInfo = '/agentInfo';
+
+  // Weapons Related Routes
+  static const weaponGridList = '/weaponGridList';
+  static const weaponInfo = '/weaponInfo';
 }
