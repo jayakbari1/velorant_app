@@ -18,13 +18,12 @@ class ShimmerGridWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Shimmer.fromColors(
-              highlightColor: Colors.grey.shade100,
-              baseColor: Colors.grey.shade300,
-              direction: ShimmerDirection.ttb,
-              child: const Card(
+              baseColor: Colors.grey.shade100,
+              highlightColor: Colors.grey.shade300,
+              child: Card(
                 child: SizedBox(
-                  height: 250,
-                  width: 150,
+                  width: MediaQuery.of(context).size.width / 3,
+                  height: 15,
                 ),
               ),
             ),
