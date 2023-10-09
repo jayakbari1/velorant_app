@@ -38,15 +38,15 @@ class WeaponGridItems extends StatelessWidget {
                           store.weapons[index].displayIcon,
                         ),
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  )
+                ],
               ),
-            );
-          },
-        );
-      }
-    );
+            ),
+          );
+        },
+      );
+    });
     ;
   }
 }

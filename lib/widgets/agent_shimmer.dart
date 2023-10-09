@@ -27,17 +27,6 @@ class ShimmerGridWidget extends StatelessWidget {
                 ),
               ),
             ),
-            Shimmer.fromColors(
-              highlightColor: Colors.grey.shade100,
-              baseColor: Colors.grey.shade300,
-              direction: ShimmerDirection.ttb,
-              child: const Card(
-                child: SizedBox(
-                  height: 250,
-                  width: 150,
-                ),
-              ),
-            ),
           ],
         );
       },

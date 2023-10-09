@@ -32,7 +32,8 @@ class AgentsGridList extends StatelessWidget {
             case NetworkState.success:
               return const DisplayGridItems();
             case NetworkState.failure:
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
+
           }
         },
       ),
