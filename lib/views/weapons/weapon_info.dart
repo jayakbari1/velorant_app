@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:velorant/model/weapos/weapon_model.dart';
 import 'package:velorant/widgets/weapon/gun_skin_items.dart';
 import 'package:velorant/widgets/weapon/weapon_data.dart';
@@ -22,11 +20,14 @@ class WeaponInfo extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Center(
-            child: SizedBox(
-              width: MediaQuery.maybeOf(context)!.size.width / 1.2,
-              child: Image(
-                image: NetworkImage(weaponModel.displayIcon),
+          Hero(
+            tag: weaponModel.displayIcon,
+            child: Center(
+              child: SizedBox(
+                width: MediaQuery.maybeOf(context)!.size.width / 1.2,
+                child: Image(
+                  image: NetworkImage(weaponModel.displayIcon),
+                ),
               ),
             ),
           ),
@@ -45,7 +46,8 @@ class WeaponInfo extends StatelessWidget {
                 ),
                 WeaponData(
                   weaponText: 'Cost',
-                  weaponData: weaponModel.shopData?.cost.toString() ?? 'No Data Found',
+                  weaponData:
+                      weaponModel.shopData?.cost.toString() ?? 'No Data Found',
                 ),
                 const Divider(
                   color: Colors.white,
@@ -64,7 +66,9 @@ class WeaponInfo extends StatelessWidget {
                 ),
                 WeaponData(
                   weaponText: 'Magazine Size',
-                  weaponData: weaponModel.weaponStats?.magazineSize.toString() ?? 'No Data Found',
+                  weaponData:
+                      weaponModel.weaponStats?.magazineSize.toString() ??
+                          'No Data Found',
                 ),
                 const Divider(
                   color: Colors.white,
@@ -74,8 +78,13 @@ class WeaponInfo extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 20,),
-          Expanded(child: GunSkinItems(weaponModel: weaponModel,)),
+          const SizedBox(
+            height: 20,
+          ),
+          Expanded(
+              child: GunSkinItems(
+            weaponModel: weaponModel,
+          )),
         ],
       ),
     );
