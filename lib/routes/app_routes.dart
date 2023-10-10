@@ -12,4 +12,9 @@ class AppRoutes {
   // Weapons Related Routes
   static const weaponGridList = '/weaponGridList';
   static const weaponInfo = '/weaponInfo';
+
+  // Maps Related Routes
+  static const maps = '/maps';
+  static const mapInfo = '/mapInfo';
+  static const viewMap = 'viewMap';
 }

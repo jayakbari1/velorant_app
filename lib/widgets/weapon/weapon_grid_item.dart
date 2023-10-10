@@ -11,35 +11,33 @@ class WeaponGridItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = context.read<WeaponStore>();
-    return Observer(
-      builder: (context) {
-        return GridView.builder(
-          gridDelegate:
-              const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          itemCount: store.weapons.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () => RouteNavigation.instance.navigateToScreen(
-                  AppRoutes.weaponInfo,
-                  arguments: store.weapons[index]),
-              child: SizedBox(
-                height: 300,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      store.weapons[index].displayName,
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                    SizedBox.square(
-                      dimension: 150,
-                      child: Image(
-                        image: NetworkImage(
-                          store.weapons[index].displayIcon,
-                        ),
+    return Observer(builder: (context) {
+      return GridView.builder(
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemCount: store.weapons.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () => RouteNavigation.instance.navigateToScreen(
+                AppRoutes.weaponInfo,
+                arguments: store.weapons[index]),
+            child: SizedBox(
+              height: 300,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    store.weapons[index].displayName,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                  SizedBox.square(
+                    dimension: 150,
+                    child: Image(
+                      image: NetworkImage(
+                        store.weapons[index].displayIcon,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
