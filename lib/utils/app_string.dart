@@ -13,4 +13,7 @@ class AppStrings {
   // Image Not Found
   static const imageNotFound =
       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png';
+
+  static const noInternet = 'No Internet Connection';
+  static const someThingWrong = 'Some thing wrong';
 }

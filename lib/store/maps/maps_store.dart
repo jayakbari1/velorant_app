@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
+import 'package:velorant/api_service/api_repository.dart';
 import 'package:velorant/api_service/api_service.dart';
 import 'package:velorant/api_service/dio.dart';
 import 'package:velorant/enumeration/network_state.dart';
@@ -19,20 +19,19 @@ abstract class _MapStore with Store {
   @observable
   NetworkState networkState = NetworkState.initial;
 
+  @observable
+  String errorMsg = '';
+
   ObservableList<MapModel> mapList = ObservableList.of([]);
 
   Future<void> getMapsData() async {
-    try {
-      networkState = NetworkState.loading;
-      final response = await client.getMaps();
-      mapList.addAll(response.data);
-      for (int i = 0; i < mapList.length; i++) {
-        debugPrint('Map List is ${mapList[i].callouts?[i].location}');
-      }
+    networkState = NetworkState.loading;
+    final response = await Repository.instance.getMapsData();
+    if (response.response != null) {
+      mapList.addAll(response.response!.data);
       networkState = NetworkState.success;
-    } catch (e, s) {
-      debugPrint('Exception is $e');
-      debugPrintStack(stackTrace: s);
+    } else {
+      errorMsg = response.errorInfo!;
       networkState = NetworkState.failure;
     }
   }
