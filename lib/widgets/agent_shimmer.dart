@@ -22,8 +22,8 @@ class ShimmerGridWidget extends StatelessWidget {
               highlightColor: Colors.grey.shade300,
               child: Card(
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: 15,
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  height: 200,
                 ),
               ),
             ),

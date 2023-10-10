@@ -7,6 +7,7 @@ import 'package:velorant/utils/app_colors.dart';
 import 'package:velorant/utils/app_string.dart';
 import 'package:velorant/widgets/agent_shimmer.dart';
 import 'package:velorant/widgets/agents/display_grid_items.dart';
+import 'package:velorant/widgets/error_widget.dart';
 
 class AgentsGridList extends StatelessWidget {
   const AgentsGridList({super.key});
@@ -32,8 +33,10 @@ class AgentsGridList extends StatelessWidget {
             case NetworkState.success:
               return const DisplayGridItems();
             case NetworkState.failure:
-              return const CircularProgressIndicator();
-
+              return ErrorWidgetWithButton(
+                errorMsg: store.errorMsg,
+                function: store.getAgentData,
+              );
           }
         },
       ),
